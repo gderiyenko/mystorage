@@ -1,9 +1,11 @@
+```
 __  _ __ __ _  __ _  ___ __  _ __ __ _  __ _  ___ 
 | '_ ` _ \| | | / __| __/ _ \| '__/ _` |/ _` |/ _ \
 | | | | | | |_| \__ \ || (_) | | | (_| | (_| |  __/
 |_| |_| |_|\__, |___/\__\___/|_|  \__,_|\__, |\___|
           __/ |                        __/ |     
-         |___/                        |___/      
+         |___/                        |___/
+```
 
 Cross-website key-value storage accessible from any browser console
 
@@ -90,7 +92,7 @@ If you find mystorage useful, consider supporting its development:
 
 - ⭐ Star this repository
 - 🐛 Report bugs or request features via Issues
-- 💝 [Buy me a coffee](https://buymeacoffee.com/yourusername)
+- 💝 [Buy me a coffee](https://buymeacoffee.com/gderiyenko)
 - 🔗 Share with other developers who might find it useful
 
 ## 🤝 Contributing
