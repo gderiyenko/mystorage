@@ -11,6 +11,8 @@ Cross-website key-value storage accessible from any browser console
 
 **mystorage** is a Chrome extension that provides a simple, universal storage API accessible from any website's console. Unlike localStorage (which is domain-specific), mystorage lets you store and retrieve data across all your tabs and websites.
 
+<img src="/img/demo.png" alt="Demo Preview" width="50%">
+
 ## ✨ Features
 
 - 🌐 **Cross-domain storage** - Share data between different websites
