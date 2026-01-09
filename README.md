@@ -11,7 +11,7 @@ Cross-website key-value storage accessible from any browser console
 
 **mystorage** is a Chrome extension that provides a simple, universal storage API accessible from any website's console. Unlike localStorage (which is domain-specific), mystorage lets you store and retrieve data across all your tabs and websites.
 
-<img src="/img/demo.png" alt="Demo Preview" width="50%">
+<img src="/img/demo.png" alt="Demo Preview">
 
 ## ✨ Features
 
@@ -36,20 +36,16 @@ Open the console on any website (F12 or Cmd+Option+J) and use these commands:
 ```javascript
 // Store a value
 await mystorage.set("ping", "pong")
+await mystorage.set("user", { name: "Alice", age: 30 })
+
 
 // Retrieve a value
 await mystorage.get("ping")
-// Returns: "pong"
-
-// Store JSON data
-await mystorage.set("user", { name: "Alice", age: 30 })
-
-// Retrieve JSON data
 await mystorage.get("user")
-// Returns: { name: "Alice", age: 30 }
 
 // Delete a value
 await mystorage.delete("ping")
+await mystorage.delete("user")
 ```
 
 All operations return promises, so remember to use `await` or `.then()`.

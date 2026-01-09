@@ -2,279 +2,7 @@
 <html>
 <head>
   <title>mystorage</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      width: 450px;
-      min-height: 500px;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #2c3e50;
-    }
-
-    .header {
-      background: white;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #2c3e50;
-      letter-spacing: -0.5px;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      color: #7f8c8d;
-      margin-top: 4px;
-    }
-
-    .tabs {
-      display: flex;
-      background: white;
-      border-bottom: 2px solid #e8ecef;
-    }
-
-    .tab {
-      flex: 1;
-      padding: 12px 20px;
-      text-align: center;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      color: #7f8c8d;
-      transition: all 0.2s;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-    }
-
-    .tab:hover {
-      background: #f8f9fa;
-      color: #2c3e50;
-    }
-
-    .tab.active {
-      color: #667eea;
-      border-bottom-color: #667eea;
-      background: #f8f9ff;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .container {
-      padding: 0px;
-    }
-
-    .add-section {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .section-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #2c3e50;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-title::before {
-      content: "";
-      width: 3px;
-      height: 16px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 2px;
-    }
-
-    #add-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 10px;
-    }
-
-    input {
-      flex: 1;
-      padding: 10px 14px;
-      border: 2px solid #e8ecef;
-      border-radius: 8px;
-      font-size: 14px;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #667eea;
-      background: #f8f9ff;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: #414160;
-      color: white;
-      width: fit-content;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 5px rgba(102, 126, 234, 0.4);
-    }
-
-    .btn-secondary {
-      background: #e8ecef;
-      color: #2c3e50;
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-
-    .btn-secondary:hover {
-      background: #d5dce0;
-    }
-
-    .btn-danger {
-      background: #fee;
-      color: #e74c3c;
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-
-    .btn-danger:hover {
-      background: #fdd;
-    }
-
-    .storage-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .storage-item {
-      background: white;
-      padding: 4px;
-      transition: all 0.2s;
-    }
-
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .item-key {
-      font-weight: 600;
-      color: #2c3e50;
-      font-size: 14px;
-      font-family: 'Monaco', 'Courier New', monospace;
-      background: #f8f9fa;
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    .item-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .item-value {
-      width: 100%;
-      color: #5a6c7d;
-      font-size: 13px;
-      word-break: break-word;
-      font-family: 'Monaco', 'Courier New', monospace;
-      border-radius: 6px;
-      white-space: pre-wrap;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 80px;
-      padding: 10px;
-      border: 2px solid #e8ecef;
-      border-radius: 6px;
-      font-size: 13px;
-      font-family: 'Monaco', 'Courier New', monospace;
-      resize: vertical;
-    }
-
-    textarea:focus {
-      outline: none;
-      border-color: #667eea;
-      background: #f8f9ff;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: 40px 20px;
-      color: #7f8c8d;
-      font-size: 14px;
-      background: white;
-      border-radius: 12px;
-    }
-
-    .empty-state::before {
-      content: "📦";
-      display: block;
-      font-size: 48px;
-      margin-bottom: 12px;
-    }
-
-    .console-info {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .console-info code {
-      background: #f8f9fa;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: 'Monaco', 'Courier New', monospace;
-      color: #667eea;
-      font-size: 12px;
-      display: block;
-      margin: 8px 0;
-      padding: 10px;
-    }
-
-    .console-info p {
-      margin-bottom: 12px;
-      color: #5a6c7d;
-    }
-  </style>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <div class="header">
@@ -283,9 +11,9 @@
   </div>
   
   <div class="tabs">
-    <div class="tab active" data-tab="storage">Storage</div>
-    <div class="tab" data-tab="add">Add</div>
-    <div class="tab" data-tab="console">Console</div>
+    <div class="tab active" data-tab="storage"><icon-svg name="butterfly"></icon-svg> Storage</div>
+    <div class="tab" data-tab="add"><icon-svg name="add"></icon-svg> Add</div>
+    <div class="tab" data-tab="console"><icon-svg name="console"></icon-svg> Console</div>
   </div>
 
   <!-- Tab: Storage (default) -->
@@ -319,8 +47,13 @@
         <code>await mystorage.delete("ping")</code>
       </div>
     </div>
+    
+    <app-footer></app-footer>
   </div>
 
+  <script src="components/icons.js"></script>
+  <script src="components/storage-item.js"></script>
   <script src="popup.js"></script>
+  <script src="components/footer.js"></script>
 </body>
 </html>
