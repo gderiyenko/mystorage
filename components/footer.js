@@ -7,11 +7,11 @@ class AppFooter extends HTMLElement {
         Thank you for your support, contributions and donations <3
       </div>
       <div class="footer-links">
-        <a href="https://github.com/yourusername/yourrepo" target="_blank" class="footer-link">
+        <a href="https://github.com/gderiyenko/mystorage" target="_blank" class="footer-link">
           <icon-svg name="github" size="18"></icon-svg>
           GitHub
         </a>
-        <a href="https://buymeacoffee.com/yourusername" target="_blank" class="footer-link">
+        <a href="https://buymeacoffee.com/gderiyenko" target="_blank" class="footer-link">
           <icon-svg name="coffee" size="18"></icon-svg>
           Buy me a coffee
         </a>
